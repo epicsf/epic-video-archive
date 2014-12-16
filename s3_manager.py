@@ -1,6 +1,6 @@
 import boto.s3.connection
 import settings
-import time
+import datetime
 import boto
 import sys
 import os
@@ -26,7 +26,7 @@ def _percent_complete(complete, total):
 	    sys.stdout.flush()
 
 def upload(connection, bucket, folder):
-	destDir = '/epic_prod_drives-%s'%time.strftime("%Y_%m_%d-%H:%M:%S")
+	destDir = '/Masters/%s'%datetime.datetime.now().isoformat()
 	uploadFileNames = {}
 	for (sourceDir, dirname, filename) in os.walk(folder):
 		uploadFileNames.setdefault(sourceDir, []).extend(filename)
