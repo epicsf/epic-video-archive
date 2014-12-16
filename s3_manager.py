@@ -16,10 +16,7 @@ def connect_to_s3():
 	return connection
 
 def connect_to_bucket(connection):
-	for bucket in connection.get_all_buckets():
-		if bucket.name == settings.s3_bucket_name:
-			return bucket
-	return False
+	return connection.get_bucket(settings.s3_bucket_name, validate=False)
 
 def _percent_complete(complete, total):
 	    sys.stdout.write('.')
