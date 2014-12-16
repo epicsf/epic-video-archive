@@ -9,7 +9,7 @@ Email: tknickman@gmail.com
 * if the system doesn’t have PIP installed, run: `sudo easy_install pip`
 * cd to the directory
 * install requirements for the program to run: `sudo pip install -r requirements.txt`
-* set config options in config.ini file
+* copy `config.ini.example` file to `config.ini` and set required options
 * run with `python app.py`
 
 
