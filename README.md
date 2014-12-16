@@ -1,4 +1,4 @@
-## Epic Production Drive Backup Script
+## Epic Video Disk Archive Script
 
 Developer: Thomas Knickman
 
@@ -15,6 +15,6 @@ Email: tknickman@gmail.com
 
 ##### How it works:
 
-* Searches for all external drives (reports error if none are found)
-* Walks the drive, and uploads all files to a new folder with the same directory structure as the local 
+* Searches for all external disks with a name starting with "Video" (reports error if none are found)
+* Walks the disk, and uploads all files to a new folder with the same directory structure as the local 
 * New directory named with the following naming scheme by default: `/epic_prod_drives-year-month-day-hour:minute:second`

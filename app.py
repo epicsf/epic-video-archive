@@ -8,9 +8,9 @@ settings = settings.Settings()
 
 def main():
 	# get all the drive contents
-	drive_list = file_manager.get_external_drives()
+	drive_list = file_manager.get_video_volumes()
 	if not drive_list:
-		print "No external drives detected"
+		print "No video disks detected"
 		sys.exit()
 
 	# connect to s3
