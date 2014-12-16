@@ -4,8 +4,8 @@ S3_ACCESS_KEY = <ACCESS_KEY>
 S3_SECRET_KEY = <SECRET_KEY>
 
 s3_bucket_name = <BUCKET_NAME>
-s3_max_file_size = 20000000
-s3_max_file_part_size = 6000000
+s3_max_file_size = 200000000
+s3_max_file_part_size = 10000000
 
 
 [epic_drive_backup_development]
@@ -14,5 +14,5 @@ S3_ACCESS_KEY = <ACCESS_KEY>
 S3_SECRET_KEY = <ACCESS_KEY>
 
 s3_bucket_name = <BUCKET_NAME>
-s3_max_file_size = 20000000
-s3_max_file_part_size = 6000000
+s3_max_file_size = 200000000
+s3_max_file_part_size = 10000000
