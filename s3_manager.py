@@ -26,7 +26,8 @@ def upload(connection, bucket, folder):
 	dest_dir = '/Masters/%s'%datetime.datetime.now().isoformat()
 
 	print "Starting upload to Amazon S3 bucket %s" % bucket.name
-	print "Using destination path %s" % dest_dir
+	print "Source:      %s" % folder
+	print "Destination: %s" % dest_dir
 
 	upload_file_names = {}
 	for (source_dir, dir_name, filename) in os.walk(folder):
