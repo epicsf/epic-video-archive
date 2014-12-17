@@ -2,7 +2,7 @@ import ConfigParser
 
 
 parser = ConfigParser.SafeConfigParser()
-parser.read('config.ini')
+parser.readfp(open('config.ini'))
 SECTION = 'epic_drive_backup_main'
 
 class Settings():
