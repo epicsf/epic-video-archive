@@ -24,6 +24,10 @@ def _percent_complete(complete, total):
 
 def upload(connection, bucket, folder):
 	dest_dir = '/Masters/%s'%datetime.datetime.now().isoformat()
+
+	print "Starting upload to Amazon S3 bucket %s" % bucket.name
+	print "Using destination path %s" % dest_dir
+
 	upload_file_names = {}
 	for (source_dir, dir_name, filename) in os.walk(folder):
 		upload_file_names.setdefault(source_dir, []).extend(filename)
@@ -33,7 +37,7 @@ def upload(connection, bucket, folder):
 			absolute_source_path = '%s/%s'%(source_dir, filename)
 			relative_source_path = absolute_source_path.replace("%s/" % folder, '')
 			final_dest_path = os.path.join(dest_dir, relative_source_path)
-			sys.stdout.write('Uploading %s to Amazon S3 bucket %s' % (final_dest_path, bucket.name))
+			sys.stdout.write(relative_source_path)
 	 
 			filesize = os.path.getsize(absolute_source_path)
 			if filesize > settings.s3_max_file_size:
@@ -42,7 +46,7 @@ def upload(connection, bucket, folder):
 				fp_num = 0
 				while (fp.tell() < filesize):
 					fp_num += 1
-					sys.stdout.write("\nUploading part %i" % fp_num)
+					sys.stdout.write("\n%s part %i" % (relative_source_path, fp_num))
 					mp.upload_part_from_file(fp, fp_num, cb=_percent_complete, num_cb=10, size=settings.s3_max_file_part_size)
 
 				mp.complete_upload()
