@@ -1,8 +1,12 @@
+import sys
+import os
+
+if os.path.dirname(sys.argv[0]):
+	os.chdir(os.path.dirname(sys.argv[0]))
+
 import file_manager
 import s3_manager
 import settings
-import sys
-
 
 settings = settings.Settings()
 
