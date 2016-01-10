@@ -3,8 +3,8 @@ import ConfigParser
 
 parser = ConfigParser.SafeConfigParser()
 parser.readfp(open('config.ini'))
-# SECTION = 'epic_drive_backup_main'
-SECTION = 'epic_drive_backup_development'
+SECTION = 'epic_drive_backup_main'
+# SECTION = 'epic_drive_backup_development'
 
 
 class Settings(object):
