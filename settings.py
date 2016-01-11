@@ -8,8 +8,7 @@ parser.readfp(open(os.path.join(os.path.abspath('%s/%s' % (
     os.path.dirname(__file__),
     'config.ini')))))
 
-# SECTION = 'epic_drive_backup_main'
-SECTION = 'epic_drive_backup_development'
+SECTION = 'epic_drive_backup_main'
 
 
 class Settings(object):
